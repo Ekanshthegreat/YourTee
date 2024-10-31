@@ -6,10 +6,20 @@
  import {download} from '../assets'
  import {downloadCanvasToImage, reader} from '../config/helpers'
  import {EditorTabs, FilterTabs, DecalTypes} from '../config/constants'
- 
+ import { fadeAnimation, slideAnimation } from '../config/motion'
+import { AIPicker, ColorPicker, CustomButton, Tab, FilePicker } from '../components'
+
  const Customizer = () => {
+    const snap = useSnapshot(state)
    return (
-     <div>Customizer</div>
+     <AnimatePresence>
+        {!snap.intro && (
+            <>
+            Customizer
+            </>
+            
+        )}
+     </AnimatePresence>
    )
  }
  
