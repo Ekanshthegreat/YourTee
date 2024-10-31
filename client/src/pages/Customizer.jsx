@@ -21,12 +21,31 @@ import { AIPicker, ColorPicker, CustomButton, Tab, FilePicker } from '../compone
                      {...slideAnimation('left')}
                      >
                         <div className='flex items-center min-h-screen'>
-                            <div className='editortabs-container tabs'>
-                                
-                            </div>
-                        </div>
+              <div className='editortabs-container tabs'>
+                {EditorTabs.map((tab) => (
+                  <Tab
+                    key={tab.name}
+                    tab={tab}
+                    handleClick={() => {}}
+                  />
+                ))}
+              </div>
+            </div>
                 </motion.div>
-            Customizer
+                <motion.div className="absolute z-10 top-5 right-5"
+                {...fadeAnimation}
+                >
+                    <CustomButton 
+                        type="filled"
+                        title="Go Back"
+                        handleClick={()=> state.intro=true}
+                        customStyles="w-fit px-4 py-2.5 font-bold text-sm" 
+                    />
+                </motion.div> 
+                
+                <motion.div
+                className='filtertabs '
+            
             </>
             
         )}
