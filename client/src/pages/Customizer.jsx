@@ -12,9 +12,20 @@ import { AIPicker, ColorPicker, CustomButton, Tab, FilePicker } from '../compone
  const Customizer = () => {
     const snap = useSnapshot(state)
    return (
-     <AnimatePresence>
+     <AnimatePresence>b
         {!snap.intro && (
             <>
+                <motion.div
+                     key="custom"
+                     className='absolute top-0 left-0 z-10'
+                     {...slideAnimation('left')}
+                     >
+                        <div className='flex items-center min-h-screen'>
+                            <div className='editortabs-container tabs'>
+                                
+                            </div>
+                        </div>
+                </motion.div>
             Customizer
             </>
             
